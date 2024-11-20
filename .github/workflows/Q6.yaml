@@ -30,17 +30,17 @@ jobs:
       run: |
         PREVIOUS_ARCHIVE_FILE=$(ls Q6_archive_*.txt | sort | tail -n 2 | head -n 1)
         if [ -f "$PREVIOUS_ARCHIVE_FILE" ]; then
-          diff $PREVIOUS_ARCHIVE_FILE Q6_archive_${{ env.date }}.txt > Q6_différences.txt
+          diff $PREVIOUS_ARCHIVE_FILE Q6_archive_${{ env.date }}.txt > Q6_differences.txt
         else
-          echo "Aucun fichier précédent trouvé, aucune différence à afficher." > Q6_différences.txt
+          echo "Aucun fichier précédent trouvé, aucune différence à afficher." > Q6_differences.txt
         fi
 
     - name: Commit changes
       run: |
         git config --global user.name ToiViMic
         git config --global user.email toivimic.caron@gmail.com
-        git add Q6.java Q6_archive_*.txt Q6_différences.txt
-        git commit -m "Add Q6_archive_${{ env.date }}.txt and Q6_différences.txt"
+        git add Q6.java Q6_archive_*.txt Q6_differences.txt
+        git commit -m "Add Q6_archive_${{ env.date }}.txt and Q6_differences.txt"
         git push origin main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
