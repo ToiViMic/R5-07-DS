@@ -16,3 +16,8 @@ Q2_archive_README.md, qui contiendra :
 Ce nouveau fichier créé sera poussé vers le dépôt.
 
 ## Q3 :  
+Créer un fichier Q3.java, qui affiche une ligne d’étoiles ‘*’. Le nombre d’étoiles est donné en
+paramètres
+Créer un nouveau workflow nommé Q3.yaml. Ce workflow créera un ficher Q3_archive_java.txt,
+qui contiendra votre nom et prénom, et le fichier Q3.java.
+Ce nouveau fichier créé sera poussé vers le dépôt.
