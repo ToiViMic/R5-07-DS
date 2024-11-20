@@ -19,4 +19,4 @@ public class Q6 {
     }
 }
 //petits chgt tests
-//test? tu marches?
+//test? tu marches? alle?
