@@ -9,7 +9,7 @@ public class Q6 {
             // Affichage inversé du triangle
             for (int i = 1; i <= n; i++) {
                 for (int j = 0; j < n - i + 1; j++) {
-                    System.out.print("x");//affichage du caractère x 
+                    System.out.print("*");//affichage du caractère *
                 }
                 System.out.println();
             }
@@ -18,3 +18,4 @@ public class Q6 {
         }
     }
 }
+//petits chgt tests
