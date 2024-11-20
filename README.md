@@ -21,3 +21,15 @@ paramètres
 Créer un nouveau workflow nommé Q3.yaml. Ce workflow créera un ficher Q3_archive_java.txt,
 qui contiendra votre nom et prénom, et le fichier Q3.java.
 Ce nouveau fichier créé sera poussé vers le dépôt.
+
+## Q4 :  
+Créer un nouveau workflow nommé Q4.yaml. Ce workflow créera un ficher Q4_archive_date.txt :
+• qui contiendra votre nom et prénom, et le fichierQ4 .java du répertoire
+• la date dans le nom du fichier sera au format JJ-MM-AAAA
+Ce nouveau fichier créé sera poussé vers le dépôt.
+Créer un fichier Q4.java, qui affiche un triangle d’étoiles ‘*’. Le nombre d’étoiles est donné en
+paramètres. Exemple : java Q4 affiche
+*
+**
+***
+****
