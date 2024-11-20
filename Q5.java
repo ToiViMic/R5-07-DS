@@ -6,14 +6,15 @@ public class Q5 {
         }
         try {
             int n = Integer.parseInt(args[0]);
+            // Affichage inversé du triangle
             for (int i = 1; i <= n; i++) {
-                for (int j = 0; j < i; j++) {
+                for (int j = 0; j < n - i + 1; j++) {
                     System.out.print("*");
                 }
                 System.out.println();
             }
         } catch (NumberFormatException e) {
-            System.out.println("Veuillez entrer un nombre valide!");
+            System.out.println("Veuillez entrer un nombre valide.");
         }
     }
 }
