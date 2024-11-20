@@ -26,8 +26,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name ToiViMic
+        git config --global user.email toivimic.caron@gmail.com
         git add Q5.java Q5_archive_*.txt
         git commit -m "Add Q5_archive_${{ env.date }}.txt with Q5.java content"
         git push origin main
