@@ -1,0 +1,46 @@
+name: Create Q6 Archive and Differences
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-archive:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Get current date
+      id: date
+      run: echo "date=$(date +'%d-%m-%Y-%H%M%S')" >> $GITHUB_ENV
+
+    - name: Create Q6_archive_date.txt
+      run: |
+        ARCHIVE_FILE="Q6_archive_${{ env.date }}.txt"
+        echo "Nom et Prénom: Caron Antoine" > $ARCHIVE_FILE
+        echo -e "\nContenu de Q6.java:\n" >> $ARCHIVE_FILE
+        cat Q6.java >> $ARCHIVE_FILE
+        echo -e "\nTaille du fichier (en nombre de caractères et de lignes):" >> $ARCHIVE_FILE
+        wc -l -m Q6.java >> $ARCHIVE_FILE
+
+    - name: Create Q6_différences.txt
+      run: |
+        PREVIOUS_ARCHIVE_FILE=$(ls Q6_archive_*.txt | sort | tail -n 2 | head -n 1)
+        if [ -f "$PREVIOUS_ARCHIVE_FILE" ]; then
+          diff $PREVIOUS_ARCHIVE_FILE Q6_archive_${{ env.date }}.txt > Q6_différences.txt
+        else
+          echo "Aucun fichier précédent trouvé, aucune différence à afficher." > Q6_différences.txt
+        fi
+
+    - name: Commit changes
+      run: |
+        git config --global user.name ToiViMic
+        git config --global user.email toivimic.caron@gmail.com
+        git add Q6.java Q6_archive_*.txt Q6_différences.txt
+        git commit -m "Add Q6_archive_${{ env.date }}.txt and Q6_différences.txt"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
