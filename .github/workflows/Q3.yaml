@@ -21,8 +21,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --local user.name "github-actions[bot]"
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name ToiViMic
+        git config --global user.email toivimic.caron@gmail.com
         git add Q3.java Q3_archive_java.txt
         git commit -m "Add Q3_archive_java.txt with Q3.java content"
         git push origin main
