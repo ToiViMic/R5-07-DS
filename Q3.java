@@ -11,7 +11,7 @@ public class Q3 {
             }
             System.out.println();
         } catch (NumberFormatException e) {
-            System.out.println("Veuillez entrer un nombre valide.");
+            System.out.println("Veuillez entrer un nombre valide !");
         }
     }
 }
