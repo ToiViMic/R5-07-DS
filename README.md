@@ -33,3 +33,5 @@ paramètres. Exemple : java Q4 affiche
 **
 ***
 ****
+
+## Q5 :  
